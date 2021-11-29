@@ -1,0 +1,177 @@
+html { font-size: 62.5%; } 
+
+:root {
+    --light-gray: #fafafa;
+    --grayish-blue: #7b7d88;
+    --gray: #4c4e61;
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: auto;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.comp {
+    width: min(85%, 70em);
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+}
+
+.topTitle {
+    display: flex;
+    width: min(95%, 45em);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.actualTitle {
+    line-height: 2.5em;
+    margin-bottom: 1em;
+}
+
+
+.topTitle h1:first-child {
+    font-weight: 200;
+}
+
+.topTitle h1 {
+    font-size: 2.2rem;
+    color: var(--gray);
+}
+
+.topTitle p {
+    font-size: 1.5rem;
+    color: var(--grayish-blue);
+}
+
+
+.sectionCont {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'supervisor'
+    'team'
+    'karma'
+    'calc';
+    width: min(95%, 40em);
+    gap: 1em;
+}
+
+.section {
+    width: 100%;
+    padding: 1.5em;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    box-shadow: 0 0 3px 3px #cfcfcf;
+}
+
+.imgCont {
+    display: flex;
+    width: 100%;
+    align-self: flex-end;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.imgCont img {
+    width: min(90%, 6em);
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    color: var(--gray);
+}
+
+.section p {
+    font-size: 1.3rem;
+    color: var(--grayish-blue);
+}
+
+.supervisor {
+    grid-area: supervisor;
+    border-top: 2px solid #45d3d3;
+}
+
+.team {
+    grid-area: team;
+    border-top: 2px solid #ea5353;
+}
+
+.karma {
+    grid-area: karma;
+    border-top: 2px solid #fcaf4a;
+}
+
+.calc {
+    grid-area: calc;
+    border-top: 2px solid #549ef2;
+}
+
+@media only screen and (min-width: 900px) {
+
+    .comp {
+        width: min(95%, 120em);
+    }
+
+    .sectionCont {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        '. team .'
+        'supervisor team calc'
+        'supervisor karma calc'
+        '. karma .';
+        width: min(95%, 100em);
+        gap: 1.5em;
+    }
+
+    .topTitle {
+        display: flex;
+        width: min(95%, 60em);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 3em;
+    }
+
+    .actualTitle {
+        line-height: 3.5em;
+    }
+
+    .topTitle h1 {
+        font-size: 3rem;
+        color: var(--gray);
+    }
+    
+    .topTitle p {
+        font-size: 2rem;
+        color: var(--grayish-blue);
+    }
+
+    .imgCont img {
+        width: min(90%, 6em);
+    }
+    
+    .section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section p {
+        font-size: 1.6rem;
+    }
+}
